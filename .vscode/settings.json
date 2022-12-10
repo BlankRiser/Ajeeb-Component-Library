@@ -2,5 +2,6 @@
   "prettier.jsxSingleQuote": true,
   "prettier.singleAttributePerLine": true,
   "typescript.preferences.jsxAttributeCompletionStyle": "auto",
-  "javascript.preferences.jsxAttributeCompletionStyle": "auto"
+  "javascript.preferences.jsxAttributeCompletionStyle": "auto",
+  "tailwindCSS.experimental.classRegex": [["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]]
 }

@@ -1,6 +1,5 @@
 import Head from 'next/head';
 
-import { Button } from '@/components';
 import { TwoColumn } from '@/layouts';
 
 export default function Home() {

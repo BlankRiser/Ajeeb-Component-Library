@@ -1,15 +1,20 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "@/components": ["src/components/index"],
-      "@/layouts": ["src/layouts/index"]
+      "@components/*": ["./src/components/*"],
+      "@contexts/*": ["./src/contexts/*"],
+      "@layout/*": ["./src/layout/*"],
+      "@ui/*": ["./src/ui/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -21,6 +26,5 @@
     "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "extensions": [".wasm", ".mjs", ".js", ".jsx", ".json", ".ts", ".tsx"],
   "exclude": ["node_modules"]
 }
