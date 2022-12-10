@@ -1,6 +1,7 @@
+import { Button } from '@components/button';
+import { ThemeToggle } from '@components/theme-toggle/theme-toggle';
+import { TwoColumn } from '@layouts/TwoColumn';
 import Head from 'next/head';
-
-import { TwoColumn } from '@/layouts';
 
 export default function Home() {
   return (
@@ -12,9 +13,27 @@ export default function Home() {
       </Head>
 
       <main className=''>
+        <section>
+          <ThemeToggle />
+        </section>
         <TwoColumn
-          leftChildren={<div className='text-4xl text-red-600'>Left</div>}
-          rightChildren={<h1 className='text-4xl text-green-600'>Right</h1>}
+          leftChildren={
+            <div className='grid h-full w-full grid-cols-4 place-items-center gap-4 '>
+              <Button variant='filled' size='medium' className='ring-o'>
+                compound
+              </Button>
+              <Button variant='light' size='medium' className=''>
+                compound
+              </Button>
+              <Button disabled variant='outline' size='medium'>
+                compound
+              </Button>
+              <Button variant='subtle' size='medium'>
+                compound
+              </Button>
+            </div>
+          }
+          rightChildren={<h1 className='p- text-4xl text-green-600'>Right</h1>}
         />
       </main>
     </div>

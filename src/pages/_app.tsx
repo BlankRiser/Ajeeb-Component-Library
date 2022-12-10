@@ -1,17 +1,22 @@
-import { Inter } from '@next/font/google';
-import '../styles/globals.css';
+import { Noto_Sans } from '@next/font/google';
+import { ThemeProvider } from 'next-themes';
 
 import type { AppProps } from 'next/app';
+import '../styles/globals.css';
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter'
+const noto = Noto_Sans({
+  preload: true,
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-noto',
+  // subsets: ['latin'],
 });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${inter.variable} font-sans`}>
-      <Component {...pageProps} />
-    </main>
+    <ThemeProvider defaultTheme='system' attribute='class'>
+      <main className={`${noto.className}`}>
+        <Component {...pageProps} />
+      </main>
+    </ThemeProvider>
   );
 }

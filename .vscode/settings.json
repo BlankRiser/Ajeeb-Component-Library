@@ -1,4 +1,10 @@
 {
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
   "prettier.jsxSingleQuote": true,
   "prettier.singleAttributePerLine": true,
   "typescript.preferences.jsxAttributeCompletionStyle": "auto",
