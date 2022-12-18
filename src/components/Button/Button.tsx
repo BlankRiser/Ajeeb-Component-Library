@@ -1,5 +1,5 @@
 import { cva, type VariantProps } from 'class-variance-authority';
-import { forwardRef, Ref } from 'react';
+import { ButtonHTMLAttributes, forwardRef, Ref } from 'react';
 
 const button = cva(
   'appearance-none font-medium gap-2 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1  focus-visible:ring-blue-300 transition-colors duration-200 ease-in-out h-max ',
@@ -9,12 +9,17 @@ const button = cva(
         filled: [
           'bg-blue-600 hover:bg-blue-700 active:bg-blue-800',
           'text-white',
-          'disabled:bg-gray-200 disabled:text-gray-400',
+          ' disabled:select-none disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-400',
+        ],
+        danger: [
+          'bg-red-600 hover:bg-red-700 active:bg-red-800',
+          'text-white',
+          ' disabled:select-none disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-400',
         ],
         light: [
           'bg-blue-50 hover:bg-blue-100 active:bg-blue-200',
           'text-blue-600',
-          'disabled:bg-gray-200 disabled:text-gray-400',
+          'disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-400',
         ],
         outline: [
           'bg-transparent hover:bg-gray-50 active:bg-gray-200 ',
@@ -23,14 +28,13 @@ const button = cva(
           'dark:text-gray-100',
           'border border-gray-300  active:border-gray-200 ',
           'dark:border-gray-600 dark:active:border-gray-700',
-          'disabled:bg-gray-200 disabled:text-gray-400',
-          'dark:disabled:bg-gray-700 dark:disabled:text-gray-500',
+          'disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-400 dark:disabled:bg-gray-700 dark:disabled:text-gray-500',
         ],
         subtle: [
           'bg-transparent hover:bg-blue-50 active:bg-blue-800 ',
           ' dark:hover:bg-blue-900 active:bg-blue-100 ',
           'text-blue-600',
-          'disabled:bg-gray-200 disabled:text-gray-400',
+          'disabled:cursor-not-allowed disabled:pointer-events-none  disabled:text-gray-400',
         ],
       },
       size: {
@@ -55,7 +59,7 @@ const button = cva(
     compoundVariants: [
       { size: 'small', onlyIcon: true, className: '!p-2' },
       { size: 'medium', onlyIcon: true, className: '!p-3' },
-      { size: 'large', onlyIcon: true, className: '!p-4 `' },
+      { size: 'large', onlyIcon: true, className: '!p-4' },
     ],
     defaultVariants: {
       variant: 'filled',
@@ -65,7 +69,7 @@ const button = cva(
   },
 );
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof button> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof button> {
   isLoading?: boolean;
   onlyIcon?: boolean;
   size?: 'small' | 'medium' | 'large';
