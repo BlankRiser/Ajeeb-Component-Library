@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
   },
   extends: [
     'next/core-web-vitals',
@@ -10,21 +10,21 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
-    'plugin:storybook/recommended'
+    'plugin:storybook/recommended',
   ],
   overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint', 'jsx-a11y', 'react-hooks', 'prettier'],
   rules: {
     'prettier/prettier': [
       'error',
       {
-        endOfLine: 'auto'
-      }
+        endOfLine: 'auto',
+      },
     ],
     indent: ['error', 2],
     // 'linebreak-style': ['off', process.platform === 'win32' ? 'windows' : 'unix'],
@@ -41,7 +41,7 @@ module.exports = {
     '@typescript-eslint/indent': 0,
     '@typescript-eslint/member-delimiter-style': 0,
     '@typescript-eslint/no-var-requires': 0,
-    '@typescript-eslint/no-use-before-define': 0,
+    '@typescript-eslint/no-use-before-define': 1,
     '@typescript-eslint/ban-ts-ignore': ['off'],
     '@typescript-eslint/no-unescaped-entities': 0,
     'react/no-unescaped-entities': 0,
@@ -50,16 +50,16 @@ module.exports = {
     'no-undef': ['error'],
     'no-var': ['error'],
     '@typescript-eslint/no-unused-vars': [
-      2,
+      1,
       {
-        argsIgnorePattern: '^_'
-      }
+        argsIgnorePattern: '^_',
+      },
     ],
     'no-console': [
       2,
       {
-        allow: ['warn', 'error']
-      }
-    ]
-  }
+        allow: ['warn', 'error'],
+      },
+    ],
+  },
 };

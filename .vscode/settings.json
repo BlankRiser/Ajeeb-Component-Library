@@ -3,7 +3,8 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
-    "source.organizeImports": true
+    "source.addMissingImports":true,
+    "source.organizeImports": true,
   },
   "prettier.jsxSingleQuote": true,
   "prettier.singleAttributePerLine": true,

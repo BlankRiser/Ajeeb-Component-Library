@@ -1,6 +1,7 @@
 {
   "name": "ajeeb",
   "version": "0.1.0",
+  "description": "React component library built using TailwindCSS, CVA and the foundations of Ajeeb design system",
   "private": true,
   "env": {
     "browser": true,
@@ -19,6 +20,7 @@
   "dependencies": {
     "@heroicons/react": "^2.0.13",
     "@next/font": "^13.0.6",
+    "@radix-ui/react-switch": "^1.0.1",
     "@types/eslint": "^8.4.10",
     "@types/node": "18.11.10",
     "@types/react": "^18.0.26",

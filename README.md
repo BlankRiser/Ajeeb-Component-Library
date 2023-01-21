@@ -1,34 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ajeeb
 
-## Getting Started
+React component library built using TailwindCSS, CVA and the foundations of Ajeeb design system
 
-First, run the development server:
+## Objective
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Ajeeb is a React component library built using TailwindCSS, CVA and the foundations of Ajeeb design system. It is a collection of components that can be used to build a website or an application. It is a work in progress and will be updated as and when required.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The plan is to basically build a component library like tailwind UI so that one can just copy the code and use it in their project. I also plan to build each component with [Radix Prmitives](https://www.radix-ui.com/) and also with [headless UI](https://headlessui.com/).
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Built With
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- [React](https://reactjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [CVA](https://github.com/joe-bell/cva)
+- [Radix Prmitives](https://www.radix-ui.com/)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## ToDos
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [ ] Accordion
+- [ ] Avatar
+- [ ] Alert
+- [ ] Badge
+- [ ] Breadcrumbs
+- [x] Button (🟢)
+- [ ] Checkbox
+- [ ] Chips
+- [ ] Calendar
+- [ ] Dropdown
+- [ ] Input fields
+- [ ] Menu / Select Options
+- [ ] Radio button
+- [ ] Toggle Switch (🟡)

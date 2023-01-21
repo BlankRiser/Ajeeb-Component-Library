@@ -1,7 +1,26 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import { ButtonHTMLAttributes, forwardRef, Ref } from 'react';
 
-const button = cva(
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonStyles> {
+  isLoading?: boolean;
+  onlyIcon?: boolean;
+  size?: 'small' | 'medium' | 'large';
+}
+
+export const _Button = (props: ButtonProps, ref: Ref<HTMLButtonElement>) => {
+  const { variant, size = 'medium', className, children, onlyIcon, radius, isLoading, ...rest } = props;
+  return (
+    <button ref={ref} className={buttonStyles({ variant, size, onlyIcon, radius, className })} {...rest}>
+      {children}
+    </button>
+  );
+};
+
+export const Button = forwardRef(_Button);
+
+Button.displayName = '@ajeeb/Button';
+
+const buttonStyles = cva(
   'appearance-none font-medium gap-2 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1  focus-visible:ring-blue-300 transition-colors duration-200 ease-in-out h-max ',
   {
     variants: {
@@ -68,22 +87,3 @@ const button = cva(
     },
   },
 );
-
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof button> {
-  isLoading?: boolean;
-  onlyIcon?: boolean;
-  size?: 'small' | 'medium' | 'large';
-}
-
-export const _Button = (props: ButtonProps, ref: Ref<HTMLButtonElement>) => {
-  const { variant, size = 'medium', className, children, onlyIcon, radius, isLoading, ...rest } = props;
-  return (
-    <button ref={ref} className={button({ variant, size, onlyIcon, radius, className })} {...rest}>
-      {children}
-    </button>
-  );
-};
-
-export const Button = forwardRef(_Button);
-
-Button.displayName = '@ajeeb/Button';
