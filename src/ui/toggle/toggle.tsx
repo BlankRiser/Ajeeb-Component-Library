@@ -23,7 +23,7 @@ export interface ToggleProps extends VariantProps<typeof toggleStyles> {
 }
 
 export function _Toggle(props: ToggleProps, ref: Ref<HTMLInputElement>) {
-  const { variant, size = 'small', className = '', thumbClassName, ...rest } = props;
+  const { variant, size = 'sm', className = '', thumbClassName, ...rest } = props;
 
   return (
     <Switch.Root
@@ -45,9 +45,9 @@ const thumbStyles = cva(
   {
     variants: {
       size: {
-        small: ['h-2.5 w-2.5 ', 'translate-x-0.5 data-[state="checked"]:translate-x-5'],
-        medium: ['w-3 h-3', 'translate-x-1 data-[state="checked"]:translate-x-6'],
-        large: ['w-3.5 h-3.5', 'translate-x-1.5 data-[state="checked"]:translate-x-7'],
+        sm: ['h-2.5 w-2.5 ', 'translate-x-0.5 data-[state="checked"]:translate-x-5'],
+        md: ['w-3 h-3', 'translate-x-1 data-[state="checked"]:translate-x-6'],
+        lg: ['w-3.5 h-3.5', 'translate-x-1.5 data-[state="checked"]:translate-x-7'],
       },
     },
   },
@@ -62,14 +62,14 @@ const toggleStyles = cva(
         danger: ['relative ', 'bg-gray-200 data-[state="checked"]:bg-red-600'],
       },
       size: {
-        small: ['w-8 h-4'],
-        medium: ['w-10 h-5 '],
-        large: ['w-12 h-6'],
+        sm: ['w-8 h-4'],
+        md: ['w-10 h-5 '],
+        lg: ['w-12 h-6'],
       },
     },
     defaultVariants: {
       variant: 'default',
-      size: 'small',
+      size: 'sm',
     },
   },
 );

@@ -4,13 +4,13 @@ import { ButtonHTMLAttributes, forwardRef, Ref } from 'react';
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonStyles> {
   isLoading?: boolean;
   onlyIcon?: boolean;
-  size?: 'small' | 'medium' | 'large';
+  size?: 'sm' | 'md' | 'lg';
 }
 
 export const _Button = (props: ButtonProps, ref: Ref<HTMLButtonElement>) => {
-  const { variant, size = 'medium', className, children, onlyIcon, radius, isLoading, ...rest } = props;
+  const { variant, size = 'md', className, children, onlyIcon, radius, isLoading, ...rest } = props;
   return (
-    <button ref={ref} className={buttonStyles({ variant, size, onlyIcon, radius, className })} {...rest}>
+    <button ref={ref} type='button' className={buttonStyles({ variant, size, onlyIcon, radius, className })} {...rest}>
       {children}
     </button>
   );
@@ -57,9 +57,9 @@ const buttonStyles = cva(
         ],
       },
       size: {
-        small: ['text-small', 'py-2 px-3'],
-        medium: ['text-small', 'py-3 px-4'],
-        large: ['text-small', 'py-4 px-5'],
+        sm: ['text-small', 'py-2 px-3'],
+        md: ['text-small', 'py-3 px-4'],
+        lg: ['text-small', 'py-4 px-5'],
       },
       onlyIcon: {
         true: 'w-max',
@@ -76,13 +76,13 @@ const buttonStyles = cva(
       },
     },
     compoundVariants: [
-      { size: 'small', onlyIcon: true, className: '!p-2' },
-      { size: 'medium', onlyIcon: true, className: '!p-3' },
-      { size: 'large', onlyIcon: true, className: '!p-4' },
+      { size: 'sm', onlyIcon: true, className: '!p-2' },
+      { size: 'md', onlyIcon: true, className: '!p-3' },
+      { size: 'lg', onlyIcon: true, className: '!p-4' },
     ],
     defaultVariants: {
       variant: 'filled',
-      size: 'medium',
+      size: 'md',
       radius: '4px',
     },
   },

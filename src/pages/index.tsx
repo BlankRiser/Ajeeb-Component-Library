@@ -1,8 +1,9 @@
 import { ThemeToggle } from '@components/theme-toggle';
 import { TwoColumn } from '@layouts/TwoColumn';
-import { Button, Toggle } from '@ui';
+import { Avatar, Button, Toggle } from '@ui';
 
 import Head from 'next/head';
+import { AjeebLogo } from 'src/assets/icons';
 
 export default function Home() {
   return (
@@ -18,6 +19,8 @@ export default function Home() {
           <ThemeToggle />
         </div>
         <section>
+          <AjeebLogo className='animate-spin' />
+          <AvatarTest />
           <ToggleTest />
           <ButtonTest />
         </section>
@@ -26,21 +29,41 @@ export default function Home() {
   );
 }
 
+function AvatarTest() {
+  return (
+    <TwoColumn
+      leftChildren={
+        <div className='grid h-full w-full grid-cols-4 place-items-center gap-2 '>
+          <Avatar
+            variant={'single'}
+            size='sm'
+            url='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
+          />
+        </div>
+      }
+      rightChildren={
+        <div className='grid h-full w-full grid-cols-4 place-items-center gap-2 '>
+          <Toggle variant={'danger'} size='sm' />
+        </div>
+      }
+    />
+  );
+}
 function ToggleTest() {
   return (
     <TwoColumn
       leftChildren={
         <div className='grid h-full w-full grid-cols-4 place-items-center gap-2 '>
-          <Toggle variant={'default'} size='small' />
-          <Toggle variant={'default'} size='medium' />
-          <Toggle variant={'default'} size='large' />
+          <Toggle variant={'default'} size='sm' />
+          <Toggle variant={'default'} size='md' />
+          <Toggle variant={'default'} size='lg' />
         </div>
       }
       rightChildren={
         <div className='grid h-full w-full grid-cols-4 place-items-center gap-2 '>
-          <Toggle variant={'danger'} size='small' />
-          <Toggle variant={'danger'} size='medium' />
-          <Toggle variant={'danger'} size='large' />
+          <Toggle variant={'danger'} size='sm' />
+          <Toggle variant={'danger'} size='md' />
+          <Toggle variant={'danger'} size='lg' />
         </div>
       }
     />
@@ -59,7 +82,7 @@ function ButtonTest() {
               viewBox='0 0 24 24'
               strokeWidth={1.5}
               stroke='currentColor'
-              className='h-6 w-6'
+              className='h-6 w-6 animate-spin'
             >
               <path
                 strokeLinecap='round'
@@ -72,14 +95,14 @@ function ButtonTest() {
       }
       rightChildren={
         <div className='grid h-full w-full grid-cols-4 place-items-center gap-2 '>
-          <Button disabled variant='filled' size='small' className='bg-red-400' onlyIcon>
+          <Button disabled variant='filled' size='sm' className='bg-red-400' onlyIcon>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
               viewBox='0 0 24 24'
               strokeWidth={1.5}
               stroke='currentColor'
-              className='h-6 w-6'
+              className='h-6 w-6 animate-spin'
             >
               <path
                 strokeLinecap='round'
