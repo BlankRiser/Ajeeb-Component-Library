@@ -1,3 +1,5 @@
+<img src="public\thumbnail.png" alt='Ajeeb thumbnail' title='Ajeeb thumbnail'>
+
 # Ajeeb
 
 React component library built using TailwindCSS, CVA and the foundations of Ajeeb design system
