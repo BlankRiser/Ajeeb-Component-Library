@@ -1,1 +1,1 @@
-export { Accordion } from './accordion';
+export { Accordion as ContextAccordion } from './using-context/accordion';

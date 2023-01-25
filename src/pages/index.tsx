@@ -4,7 +4,7 @@ import { Avatar, Button, Toggle } from '@ui';
 
 import Head from 'next/head';
 import { AjeebLogo } from 'src/assets/icons';
-import { Accordion } from 'src/ui/accordion';
+import { ContextAccordion } from 'src/ui/accordion';
 
 export default function Home() {
   return (
@@ -38,15 +38,15 @@ function AccordionTest() {
     <TwoColumn
       leftChildren={
         <div className='grid h-full w-full grid-cols-4 place-items-center gap-2 '>
-          <Accordion
+          <ContextAccordion
             expanded={false}
             onToggle={() => {
               console.log('toggle');
             }}
           >
-            <Accordion.Header>Header</Accordion.Header>
-            <Accordion.Panel>Body</Accordion.Panel>
-          </Accordion>
+            <ContextAccordion.Header>Header</ContextAccordion.Header>
+            <ContextAccordion.Panel>Body</ContextAccordion.Panel>
+          </ContextAccordion>
         </div>
       }
       rightChildren={
