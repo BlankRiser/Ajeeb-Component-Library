@@ -9,13 +9,13 @@ export function TwoColumn(props: Props) {
     <section className='grid h-[40rem] grid-cols-1 place-items-center gap-6 p-6 md:grid-cols-2'>
       <div
         id='light-theme'
-        className='flex h-full w-full items-center justify-center rounded-sm border border-gray-800 dark:border-gray-600'
+        className='flex h-full w-full items-center justify-center rounded-sm border border-gray-200 dark:border-gray-800'
       >
         {leftChildren}
       </div>
       <div
         id='dark-theme'
-        className='flex h-full w-full items-center justify-center rounded-sm border border-gray-800 dark:border-gray-600'
+        className='flex h-full w-full items-center justify-center rounded-sm border border-gray-200 dark:border-gray-800'
       >
         {rightChildren}
       </div>

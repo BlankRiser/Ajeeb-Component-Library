@@ -15,7 +15,7 @@ The plan is to basically build a component library like tailwind UI so that one 
 - [React](https://reactjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [CVA](https://github.com/joe-bell/cva)
-- [Radix Prmitives](https://www.radix-ui.com/)
+- [Radix Primitives](https://www.radix-ui.com/)
 
 ## ToDos
 

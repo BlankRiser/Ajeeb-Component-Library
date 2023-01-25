@@ -1,5 +1,12 @@
-type Props = {};
+import { useContext } from 'react';
+import { AccordionContext } from './accordion-context';
 
-export function AccordionPanel({}: Props) {
-  return <div>AccordionP anel</div>;
+type Props = {
+  children: React.ReactNode;
+};
+
+export function AccordionPanel({ children }: Props) {
+  const accordion = useContext(AccordionContext);
+  const { expanded } = accordion;
+  return <div className={`${expanded ? 'block' : 'hidden'}`}>{children}</div>;
 }

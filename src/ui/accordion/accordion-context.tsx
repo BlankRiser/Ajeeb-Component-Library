@@ -2,10 +2,8 @@ import { createContext } from 'react';
 
 type AccordionContextValue = {
   expanded: boolean;
-  onToggle: () => void;
 };
 
-export const AccordionContext = createContext<AccordionContextValue | null>({
+export const AccordionContext = createContext<AccordionContextValue>({
   expanded: false,
-  onToggle: () => {},
 });

@@ -4,6 +4,7 @@ import { Avatar, Button, Toggle } from '@ui';
 
 import Head from 'next/head';
 import { AjeebLogo } from 'src/assets/icons';
+import { Accordion } from 'src/ui/accordion';
 
 export default function Home() {
   return (
@@ -18,8 +19,11 @@ export default function Home() {
         <div className='fixed bottom-5 right-5'>
           <ThemeToggle />
         </div>
+        <section className='grid place-items-center p-4'>
+          <AjeebLogo width={48} height={48} className='text-purple-500 ' />
+        </section>
         <section>
-          <AjeebLogo className='animate-spin' />
+          <AccordionTest />
           <AvatarTest />
           <ToggleTest />
           <ButtonTest />
@@ -29,6 +33,30 @@ export default function Home() {
   );
 }
 
+function AccordionTest() {
+  return (
+    <TwoColumn
+      leftChildren={
+        <div className='grid h-full w-full grid-cols-4 place-items-center gap-2 '>
+          <Accordion
+            expanded={false}
+            onToggle={() => {
+              console.log('toggle');
+            }}
+          >
+            <Accordion.Header>Header</Accordion.Header>
+            <Accordion.Panel>Body</Accordion.Panel>
+          </Accordion>
+        </div>
+      }
+      rightChildren={
+        <div className='grid h-full w-full grid-cols-4 place-items-center gap-2 '>
+          <Toggle variant={'danger'} size='sm' />
+        </div>
+      }
+    />
+  );
+}
 function AvatarTest() {
   return (
     <TwoColumn
