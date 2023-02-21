@@ -4,7 +4,6 @@ import { Avatar, Button, Toggle } from '@ui';
 
 import Head from 'next/head';
 import { AjeebLogo } from 'src/assets/icons';
-import { Accordion } from 'src/ui/accordion';
 import { FormattedInput } from 'src/ui/input/formatted-input';
 
 export default function Home() {
@@ -25,7 +24,6 @@ export default function Home() {
           <FormattedInput />
         </section>
         <section>
-          <AccordionTest />
           <AvatarTest />
           <ToggleTest />
           <ButtonTest />
@@ -35,30 +33,6 @@ export default function Home() {
   );
 }
 
-function AccordionTest() {
-  return (
-    <TwoColumn
-      leftChildren={
-        <div className='grid h-full w-full grid-cols-4 place-items-center gap-2 '>
-          <Accordion
-            expanded={true}
-            onToggle={() => {
-              console.log('toggle');
-            }}
-          >
-            <Accordion.Header>Header</Accordion.Header>
-            <Accordion.Panel>Body</Accordion.Panel>
-          </Accordion>
-        </div>
-      }
-      rightChildren={
-        <div className='grid h-full w-full grid-cols-4 place-items-center gap-2 '>
-          <Toggle variant={'danger'} size='sm' />
-        </div>
-      }
-    />
-  );
-}
 function AvatarTest() {
   return (
     <TwoColumn
