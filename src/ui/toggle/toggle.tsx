@@ -4,7 +4,7 @@
  * @module @ajeeb/toggle
  *
  * @description
- * A toggle component that uses the `@radix-ui/react-switch` package.
+ * A toggle switch component that uses the `@radix-ui/react-switch` package.
  *
  * @dependencies
  * ```sh

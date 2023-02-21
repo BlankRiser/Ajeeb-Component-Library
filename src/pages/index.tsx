@@ -5,6 +5,7 @@ import { Avatar, Button, Toggle } from '@ui';
 import Head from 'next/head';
 import { AjeebLogo } from 'src/assets/icons';
 import { Accordion } from 'src/ui/accordion';
+import { FormattedInput } from 'src/ui/input/formatted-input';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         </div>
         <section className='grid place-items-center p-4'>
           <AjeebLogo width={48} height={48} className='text-purple-500 ' />
+          <FormattedInput />
         </section>
         <section>
           <AccordionTest />
@@ -39,7 +41,7 @@ function AccordionTest() {
       leftChildren={
         <div className='grid h-full w-full grid-cols-4 place-items-center gap-2 '>
           <Accordion
-            expanded={false}
+            expanded={true}
             onToggle={() => {
               console.log('toggle');
             }}
