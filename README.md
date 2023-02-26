@@ -19,10 +19,10 @@ The plan is to basically build a component library like tailwind UI so that one 
 
 ## ToDos
 
-- [ ] Accordion
-- [ ] Avatar
+- [ ] Accordion (🟡)
+- [x] Avatar
 - [ ] Alert
-- [ ] Badge
+- [x] Badge (🟢)
 - [ ] Breadcrumbs
 - [x] Button (🟢)
 - [ ] Checkbox
@@ -32,4 +32,4 @@ The plan is to basically build a component library like tailwind UI so that one 
 - [ ] Input fields
 - [ ] Menu / Select Options
 - [ ] Radio button
-- [ ] Toggle Switch (🟡)
+- [x] Toggle Switch (🟢)

@@ -6,6 +6,7 @@ import Head from 'next/head';
 import { AjeebLogo } from 'src/assets/icons';
 
 import { Resolver, useForm } from 'react-hook-form';
+import { Badge } from 'src/ui/badge/badge';
 
 type FormValues = {
   testNumber: number;
@@ -49,6 +50,7 @@ export default function Home() {
           <AjeebLogo width={48} height={48} className='text-purple-500 ' />
         </section>
         <section>
+          <BadgeTest />
           <AvatarTest />
           <ToggleTest />
           <ButtonTest />
@@ -58,6 +60,32 @@ export default function Home() {
   );
 }
 
+function BadgeTest() {
+  return (
+    <TwoColumn
+      leftChildren={
+        <div className='grid h-full w-full grid-cols-4 place-items-center gap-2 '>
+          <Badge size='lg' isRounded variant='neutral'>
+            ncie
+          </Badge>
+          <Badge size='sm' variant='info'>
+            ncie
+          </Badge>
+          <Badge size='md' variant='success'>
+            ncie
+          </Badge>
+          <Badge size='lg' variant='danger'>
+            ncie
+          </Badge>
+          <Badge size='lg' isRounded variant='warning'>
+            ncie
+          </Badge>
+        </div>
+      }
+      rightChildren={<div className='grid h-full w-full grid-cols-4 place-items-center gap-2 '></div>}
+    />
+  );
+}
 function AvatarTest() {
   return (
     <TwoColumn
@@ -69,7 +97,10 @@ function AvatarTest() {
             size='xl'
             url='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
           />
-
+        </div>
+      }
+      rightChildren={
+        <div className='grid h-full w-full grid-cols-4 place-items-center gap-2 '>
           <Avatar
             variant={'group'}
             size='xl'
@@ -79,11 +110,6 @@ function AvatarTest() {
               'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
             ]}
           />
-        </div>
-      }
-      rightChildren={
-        <div className='grid h-full w-full grid-cols-4 place-items-center gap-2 '>
-          <Toggle variant={'danger'} size='sm' />
         </div>
       }
     />

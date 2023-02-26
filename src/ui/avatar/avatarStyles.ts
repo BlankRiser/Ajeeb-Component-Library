@@ -11,11 +11,11 @@ export const avatarStyles = cva('rounded-full object-cover', {
     },
     variant: {
       single: '',
-      group: 'ring-2 ring-white',
+      group: 'ring-2 ring-white dark:bg-gray-900',
     },
   },
 });
-export const notificationStyles = cva('absolute block bg-green-600 rounded-full ring-2 ring-white', {
+export const notificationStyles = cva('absolute block bg-green-600 rounded-full ring-2 ring-white dark:ring-gray-900', {
   variants: {
     size: {
       xs: 'bottom-0 right-0 h-1.5 w-1.5',
