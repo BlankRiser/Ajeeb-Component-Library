@@ -4,9 +4,35 @@ import { Avatar, Button, Toggle } from '@ui';
 
 import Head from 'next/head';
 import { AjeebLogo } from 'src/assets/icons';
-import { FormattedInput } from 'src/ui/input/formatted-input';
+
+import { Resolver, useForm } from 'react-hook-form';
+
+type FormValues = {
+  testNumber: number;
+};
+
+const resolver: Resolver<FormValues> = async (values) => {
+  return {
+    values: values.testNumber ? values : {},
+    errors: !values.testNumber
+      ? {
+          testNumber: {
+            type: 'required',
+            message: 'This is required.',
+          },
+        }
+      : {},
+  };
+};
 
 export default function Home() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>({ resolver });
+  const onSubmit = handleSubmit((data) => console.log(data));
+
   return (
     <div>
       <Head>
@@ -21,7 +47,6 @@ export default function Home() {
         </div>
         <section className='grid place-items-center p-4'>
           <AjeebLogo width={48} height={48} className='text-purple-500 ' />
-          <FormattedInput />
         </section>
         <section>
           <AvatarTest />
@@ -40,8 +65,19 @@ function AvatarTest() {
         <div className='grid h-full w-full grid-cols-4 place-items-center gap-2 '>
           <Avatar
             variant={'single'}
-            size='sm'
+            hasNotification
+            size='xl'
             url='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
+          />
+
+          <Avatar
+            variant={'group'}
+            size='xl'
+            url={[
+              'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+              'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+              'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+            ]}
           />
         </div>
       }
